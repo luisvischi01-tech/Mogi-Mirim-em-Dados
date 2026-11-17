@@ -80,3 +80,34 @@ if (contactForm) {
   document.addEventListener("focusout", hide);
   window.addEventListener("scroll", hide, { passive: true });
 })();
+
+/* Tabelas empilhadas no celular: copia o título da coluna para cada célula */
+(function () {
+  function label(table) {
+    var heads = Array.prototype.map.call(table.querySelectorAll("thead th"), function (th) {
+      return th.textContent.replace(/[▲▼]/g, "").replace(/\s*\(US\$ FOB\)/, "").trim();
+    });
+    table.querySelectorAll("tbody tr").forEach(function (tr) {
+      Array.prototype.forEach.call(tr.children, function (td, i) {
+        if (heads[i] && td.getAttribute("data-label") !== heads[i]) td.setAttribute("data-label", heads[i]);
+      });
+    });
+  }
+  document.querySelectorAll("table.stack").forEach(function (t) {
+    label(t);
+    new MutationObserver(function () { label(t); }).observe(t, { childList: true, subtree: true });
+  });
+
+  /* Blocos recolhíveis começam fechados no celular */
+  if (window.matchMedia("(max-width: 700px)").matches) {
+    document.querySelectorAll("details[data-collapse-mobile]").forEach(function (d) { d.open = false; });
+  }
+})();
+
+/* No celular, gráficos rolados começam pelos anos mais recentes */
+window.addEventListener("load", function () {
+  if (!window.matchMedia("(max-width: 700px)").matches) return;
+  setTimeout(function () {
+    document.querySelectorAll(".comex-chart, .cg-chart").forEach(function (c) { c.scrollLeft = c.scrollWidth; });
+  }, 300);
+});

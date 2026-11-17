@@ -104,7 +104,7 @@
       return "<tr" + (total ? ' class="cg-total"' : "") + "><td>" + r[0] + '</td><td class="num">' + nf.format(r[1]) + '</td><td class="num">' + nf.format(r[2]) + '</td><td class="num ' + cls(r[3]) + '">' + sg(r[3]) + '</td><td class="num">' + (r[4] == null ? "—" : nd.format(r[4])) + "</td></tr>";
     }).join("") + "</tbody>";
   }
-  var H = ["", "Admissões", "Desligamentos", "Saldo", "Tempo médio no emprego (meses)"];
+  var H = ["", "Admissões", "Desligam.", "Saldo", "Tempo médio (meses)"];
   table(D.setores, "cg-setores", 4, ["Grande setor"].concat(H.slice(1)));
   table(D.ocupacoes, "cg-ocup", 4, ["Grande grupo de ocupação"].concat(H.slice(1)));
 })();

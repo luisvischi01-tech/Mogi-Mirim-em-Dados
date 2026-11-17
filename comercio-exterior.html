@@ -56,18 +56,9 @@
     </section>
     <section id="comercio-exterior" class="section comex-section">
       <div class="container">
-        <div class="section-heading">
-          <span class="section-label">Comércio exterior</span>
-          <h2>Exportações e importações de Mogi Mirim, 2016–2026.</h2>
-          <p>
-            Série histórica de comércio exterior do município por produto (SH2 e SH4),
-            país de destino ou origem e valor em US$ FOB. Os filtros abaixo permitem
-            recortar o período, o fluxo, o capítulo, o país e o termo de busca, além de
-            agrupar os dados e exportar o resultado em CSV.
-          </p>
-        </div>
-
         <div id="comex">
+          <details class="filter-box" data-collapse-mobile open>
+            <summary>Filtros</summary>
           <form class="comex-filters" onsubmit="return false" aria-label="Filtros de comércio exterior">
             <label>Fluxo
               <select id="cx-fluxo">
@@ -105,6 +96,7 @@
             </label>
             <button type="button" id="cx-limpar" class="comex-btn">Limpar filtros</button>
           </form>
+          </details>
 
           <div id="cx-kpis" class="comex-kpis" aria-live="polite"></div>
 
@@ -129,12 +121,14 @@
             <p id="cx-dest-note" class="comex-dest-note"></p>
           </div>
 
+          <details class="table-box" data-collapse-mobile open>
+            <summary>Tabela completa e download</summary>
           <div class="comex-table-head">
             <p id="cx-resumo" class="comex-resumo" aria-live="polite"></p>
             <button type="button" id="cx-csv" class="comex-btn comex-btn-primary">Baixar CSV</button>
           </div>
           <div class="comex-table-wrap">
-            <table class="comex-table">
+            <table class="comex-table stack">
               <thead id="cx-thead"></thead>
               <tbody id="cx-tbody"></tbody>
             </table>
@@ -144,23 +138,24 @@
             <span id="cx-pagina"></span>
             <button type="button" id="cx-next" class="comex-btn">Próxima →</button>
           </div>
+          </details>
 
-          <p class="comex-note">
+          <details class="note-more"><summary>Como ler estes dados</summary><p class="comex-note">
             Valores em dólares norte-americanos, preço FOB, sem correção monetária.
             * 2026 refere-se a período parcial, conforme a data de extração. SH2 e SH4:
             capítulos e posições do Sistema Harmonizado. Nomes de produtos e setores foram simplificados para facilitar a leitura; a descrição oficial aparece ao passar o cursor sobre o nome e está disponível na base de origem. Clique no cabeçalho das colunas para ordenar.
-          </p>
+          </p></details>
         </div>
 
-        <aside class="insight" aria-label="Notas">
-          <h3>Notas</h3>
+        <details class="insight" data-collapse-mobile open>
+          <summary>Notas</summary>
           <ul>
             <li><strong>Exportações estáveis, em patamar de US$ 72 milhões.</strong> O valor de 2025 ficou 1,6% abaixo de 2016 e 18% abaixo do pico de 2023 (US$ 88,3 milhões). O pior ano foi 2020 (US$ 49,4 milhões), e a recuperação veio em 2022 e 2023.</li>
             <li><strong>Pauta diversificada, destino concentrado.</strong> Nenhum setor passa de 23,4% (máquinas e equipamentos), e o maior produto, autopeças, tem 18,5%. Já os Estados Unidos recebem 29,3% das vendas, e EUA, Argentina, México e Chile juntos somam 52,7%. Vendas para 58 países mostram alcance, mas a dependência regional é alta.</li>
             <li><strong>Perfil importador.</strong> As importações chegaram a US$ 172,5 milhões em 2025, 2,4 vezes as exportações e 2,9 vezes o valor de 2016. Fertilizantes são 24,6% do total, e a China é a origem de 29%. É um município com demanda recorrente por logística de importação, desembaraço e conformidade aduaneira.</li>
             <li><strong>Como ler.</strong> O Comex Stat atribui a operação ao município do domicílio da empresa declarante, não necessariamente ao local de produção. O ano de 2026 é parcial e não deve ser comparado com os anos fechados.</li>
           </ul>
-        </aside>
+        </details>
 
         <p class="section-source">Fonte: Comex Stat / Siscomex (MDIC), extração de 17/11/2026.</p>
       </div>
