@@ -1,0 +1,334 @@
+/* =====================================================================
+   Tema formal — Mogi Mirim em dados
+   Carregado DEPOIS de styles.css. Base neutra, um único verde institucional;
+   amarelo e vermelho ficam reservados aos dados (importação, valores negativos).
+   As cores da bandeira aparecem como assinatura: uma faixa fina no topo e no rodapé.
+   ===================================================================== */
+
+:root {
+  --green: #0f7a36;
+  --green-dark: #0b5e29;
+  --green-soft: #eaf3ed;
+  --yellow: #e0a800;
+  --red: #c8102e;
+  --flag-green: #129138;
+  --flag-yellow: #faba01;
+  --flag-red: #db1225;
+
+  --ink: #111827;
+  --ink-2: #1f2937;
+  --muted: #5b6472;
+  --paper: #ffffff;
+  --surface: #f6f7f9;
+  --border: #e4e7ec;
+  --border-strong: #d0d5dd;
+
+  --shadow-soft: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 16px rgba(16, 24, 40, 0.04);
+  --radius-lg: 14px;
+  --radius-md: 12px;
+
+  --font-display: "Inter Tight", "Inter", Arial, sans-serif;
+  --font-body: "Inter", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --flag-stripe: linear-gradient(90deg, var(--flag-green) 0 33.33%, var(--flag-yellow) 33.33% 66.66%, var(--flag-red) 66.66% 100%);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Tipografia: caixa normal, peso médio, espaçamento justo ---------- */
+h1, h2, .page-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+h1 { font-size: clamp(2.4rem, 4.8vw, 3.9rem); line-height: 1.04; }
+h2 { font-size: clamp(1.6rem, 2.8vw, 2.25rem); line-height: 1.15; margin-bottom: 12px; }
+.page-hero h1 { font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.08; }
+h3 { font-weight: 650; letter-spacing: -0.01em; }
+
+.section-label, .eyebrow {
+  align-items: center;
+  gap: 10px;
+  color: var(--green-dark);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+}
+.section-label::before, .eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+}
+
+.section-heading p, .text-content p, .hero-content p, .page-hero p { color: var(--muted); }
+
+/* ---------- Cabeçalho e marca ---------- */
+.site-header {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--border);
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--flag-stripe);
+}
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--green);
+}
+.brand-mark::before {
+  inset: auto 0 0 0;
+  width: auto;
+  height: 6px;
+  top: auto;
+  left: 0;
+  border-radius: 0;
+  background: var(--flag-stripe);
+}
+.brand-mark::after { display: none; }
+.brand-text strong { font-family: var(--font-display); font-weight: 650; letter-spacing: -0.01em; }
+
+.main-nav { gap: 26px; font-size: 0.92rem; font-weight: 500; }
+.main-nav a { color: var(--ink-2); }
+.main-nav a:hover { color: var(--green); }
+.main-nav a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--green); }
+
+/* ---------- Capa ---------- */
+.hero-circles { display: none; }
+.hero {
+  padding: 88px 0 80px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0) 60%, #fff 100%),
+    linear-gradient(var(--border) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0 / 48px 48px,
+    #fbfcfd;
+  background-blend-mode: normal;
+  border-bottom: 1px solid var(--border);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 25% 40%, #fff 30%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+.hero-content { padding-left: 0; }
+.hero-city { color: var(--green); }
+.hero-content p { font-size: 1.1rem; line-height: 1.65; max-width: 560px; }
+.hero-actions { margin-top: 28px; gap: 12px; }
+.hero-kicker { margin-bottom: 18px; }
+
+.button { border-radius: 10px; font-weight: 600; min-height: 46px; padding: 12px 20px; }
+.button.primary { background: var(--green); }
+.button.primary:hover { background: var(--green-dark); transform: none; }
+.button.secondary { background: #fff; border: 1px solid var(--border-strong); color: var(--ink); }
+.button.secondary:hover { border-color: var(--ink); }
+
+.hero-map-card, .hero-stat-card {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border);
+}
+.hero-stat-card { border-top: 1px solid var(--border); padding: 24px 26px; }
+.hero-stat-card-header { color: var(--muted); font-size: 0.85rem; }
+.hero-stat-main strong, .hero-stat-sub strong {
+  font-family: var(--font-display);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  -webkit-text-stroke: 0;
+  font-variant-numeric: tabular-nums;
+}
+.hero-stat-main strong { color: var(--green); font-size: 3rem; }
+.hero-stat-sub strong { color: var(--ink); font-size: 1.7rem; }
+.hero-map-label { color: var(--muted); }
+.territory-shape { fill: rgba(15, 122, 54, 0.12); }
+.territory-center circle { fill: var(--ink); }
+
+/* ---------- Seções ---------- */
+.section { padding: 84px 0; }
+.section-tinted { background: var(--surface); border-color: var(--border); }
+.page-hero {
+  background:
+    linear-gradient(var(--border) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0 / 48px 48px,
+    #fbfcfd;
+  position: relative;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #fff 35%, rgba(255,255,255,0.55) 100%);
+  pointer-events: none;
+}
+.page-hero .container { position: relative; }
+.page-chips a { border-radius: 8px; font-weight: 500; border-color: var(--border-strong); }
+.page-chips a:hover { border-color: var(--green); color: var(--green-dark); }
+.section-source { color: #7a8391; }
+
+/* ---------- Cartões: borda fina, cantos iguais, sem cores decorativas ---------- */
+.stat-card, .highlight-card, .explore-card, .service-card, .incentive-card,
+.infra-card, .climate-card, .chart-card, .comex-kpi, .em-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: none;
+}
+.explore-card, .explore-card[data-tone="yellow"], .explore-card[data-tone="red"],
+.infra-card, .infra-card:nth-child(n), .climate-card, .climate-card[data-tone="yellow"],
+.incentive-card, .incentive-card:nth-child(2),
+.comex-kpi, .comex-kpi[data-tone="yellow"], .comex-kpi[data-tone="red"] {
+  border-top: 1px solid var(--border);
+}
+.section-tinted .stat-card { background: #fff; }
+
+/* Ícones e etiquetas: um único tom institucional */
+.stat-icon, .stat-icon[data-tone], .industry-icon, .industry-icon[data-tone] {
+  color: var(--green-dark);
+  background: var(--green-soft);
+  border-radius: 10px;
+}
+.service-tag, .service-tag[data-tone] {
+  color: var(--green-dark);
+  background: transparent;
+  border: 1px solid #cfe3d6;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+}
+.service-card.featured { background: #fff; border-color: var(--border); }
+
+/* Números: mesma família dos títulos, algarismos alinhados */
+.stat-number, .infra-number, .climate-number, .comex-kpi strong {
+  font-family: var(--font-display);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  text-transform: none;
+  color: var(--ink);
+}
+.stat-number { font-size: 1.75rem; }
+.stat-number-text { font-size: 1.15rem; line-height: 1.3; }
+.infra-number, .climate-number { font-size: 1.9rem; }
+.comex-kpi span { font-size: 0.72rem; letter-spacing: 0.06em; }
+
+.stat-card-link:hover, .stat-card-link:focus-visible,
+.explore-card:hover, .explore-card:focus-visible {
+  border-color: var(--green);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+.explore-card { padding: 22px 24px; }
+.explore-tag { color: var(--green-dark); }
+.explore-go { color: var(--green-dark); font-weight: 600; }
+
+/* Conclusões: bloco sóbrio com filete verde */
+.insight {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green);
+  border-radius: 10px;
+}
+.section-tinted .insight { background: #fff; }
+
+/* Abas e botões de gráfico */
+.comex-btn { border-radius: 8px; font-weight: 500; border-color: var(--border-strong); }
+.em-tabs .comex-btn.is-active { background: var(--ink); border-color: var(--ink); }
+
+/* Território: coluna lateral mais larga e rotas abaixo do destino */
+@media (min-width: 921px) { .map-wrap { grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr); gap: 36px; } }
+.map-distances tr { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+.map-distances th, .map-distances td { padding: 0; border-bottom: 0; }
+.map-distances td:nth-child(2) { text-align: right; }
+.map-distances td:nth-child(3) { grid-column: 1 / -1; margin-top: 2px; font-family: var(--font-mono); font-size: 0.72rem; }
+
+/* Emprego e Agricultura: 4 indicadores ocupam a linha inteira */
+@media (min-width: 981px) { #cg-kpis, #ag-panorama { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* Início: 5 caminhos — 2 em cima, 3 embaixo (desktop); 2 colunas no tablet */
+@media (min-width: 981px) {
+  .explore-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .explore-grid > .explore-card { grid-column: span 2; }
+  .explore-grid > .explore-card:nth-child(-n+2) { grid-column: span 3; }
+}
+@media (min-width: 701px) and (max-width: 980px) {
+  .explore-grid > .explore-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+/* Agricultura: ranking clicável */
+.ag-rank-btn { display: block; width: 100%; padding: 6px 8px; margin: 0 -8px; border: 0; border-radius: 8px; background: transparent; font: inherit; color: inherit; text-align: left; cursor: pointer; box-sizing: content-box; }
+.ag-rank-btn:hover { background: var(--surface); }
+.ag-rank-btn:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.ag-rank .comex-dest-val em.pos { color: var(--green); }
+.ag-rank .comex-dest-val em.neg { color: var(--red); }
+.ag-rank .comex-dest-val em { min-width: 76px; text-align: right; }
+@media (max-width: 640px) {
+  .ag-rank-btn { margin: 0; padding: 6px 0; box-sizing: border-box; }
+  .ag-rank .comex-dest-row { grid-template-columns: 22px minmax(0, 1fr) auto; row-gap: 4px; }
+  .ag-rank .comex-dest-name { grid-column: 2 / -1; grid-row: 1; }
+  .ag-rank .comex-dest-row .bar-track { grid-column: 2; grid-row: 2; }
+  .ag-rank .comex-dest-val { grid-column: 3; grid-row: 2; }
+  .ag-rank .comex-dest-val { font-size: 0.76rem; }
+  .ag-rank .comex-dest-val em { min-width: 0; margin-left: 6px; }
+  .comex-kpi strong small { display: block; margin: 2px 0 0; }
+  .comex-filters.ag-filters { grid-template-columns: minmax(0, 1fr); }
+  .ag-filters select { width: 100%; }
+}
+
+/* ---------- Rodapé ---------- */
+.site-footer { position: relative; background: #0b1220; }
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--flag-stripe);
+}
+.footer-content a.footer-top { color: #fff; }
+.footer-content a.footer-top:hover { color: var(--flag-yellow); }
+
+/* ---------- Movimento discreto ao rolar (só onde o navegador suporta) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .section .container > * {
+      animation: tf-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 28%;
+    }
+  }
+}
+@keyframes tf-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 700px) {
+  /* áreas de toque com pelo menos ~44px */
+  details.insight > summary { min-height: 44px; margin: -14px -18px; padding: 14px 18px; }
+  details.insight[open] > summary { margin-bottom: 0; }
+  .footer-nav { gap: 0 4px; }
+  .footer-nav a, .footer-content a.footer-top { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; }
+  .cg-sel select, .comex-filters select, .comex-filters input { min-height: 44px; }
+  #caged .em-tabs { flex-wrap: wrap; overflow: visible; }
+  #caged .cg-sel { display: flex; align-items: center; gap: 8px; flex: 1 1 100%; margin-left: 0; }
+  #caged .cg-sel select { flex: 1; }
+  .hero { padding: 48px 0 40px; }
+  h1 { font-size: 2.3rem; }
+  .stat-number { font-size: 1.4rem; }
+}

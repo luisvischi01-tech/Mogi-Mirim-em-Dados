@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Agricultura | Mogi Mirim em dados</title>
+
+  <meta name="description" content="Produção agrícola de Mogi Mirim (SP) de 2016 a 2025, por cultura, com dados da Produção Agrícola Municipal (Sidra/IBGE)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Mogi Mirim em dados" />
+  <meta property="og:title" content="Agricultura | Mogi Mirim em dados" />
+  <meta property="og:description" content="Produção agrícola de Mogi Mirim (SP) de 2016 a 2025, por cultura, com dados da Produção Agrícola Municipal (Sidra/IBGE)." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/agricultura.html" />
+  <meta property="og:image" content="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mogi Mirim em dados: 13.280 empresas, US$ 72 milhões exportados em 2025 para 58 países" />
+  <link rel="canonical" href="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/agricultura.html" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23129138%22/><circle cx=%2235%22 cy=%2235%22 r=%2214%22 fill=%22%23faba01%22/><circle cx=%2262%22 cy=%2262%22 r=%2216%22 fill=%22%23db1225%22/></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tema-formal.css" />
+</head>
+
+<body>
+  <a href="#inicio" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="index.html" class="brand" aria-label="Página inicial">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>Mogi Mirim</strong>
+          <span>em dados</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html">Início</a>
+        <a href="economia.html">Economia</a>
+        <a href="agricultura.html" aria-current="page">Agricultura</a>
+        <a href="comercio-exterior.html">Comércio exterior</a>
+        <a href="territorio.html">Território</a>
+        <a href="investir.html">Investir</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label">Agricultura</span>
+        <h1>Produção agrícola local</h1>
+        <p>Quanto o município produz de cada cultura e como isso mudou de 2016 a 2025.</p>
+        <nav class="page-chips" aria-label="Nesta página"><a href="#panorama">Panorama 2025</a><a href="#por-cultura">Evolução por cultura</a></nav>
+      </div>
+    </section>
+
+    <section id="panorama" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Panorama 2025</span>
+          <h2>Citros em expansão, cana-de-açúcar em queda.</h2>
+          <p>As culturas com produção em 2025, da maior para a menor, e a variação desde 2016.</p>
+        </div>
+
+        <details class="insight" data-collapse-mobile open>
+          <summary>Principais conclusões</summary>
+          <ul>
+            <li><strong>Os citros ganham espaço.</strong> A laranja chegou a 176,8 mil toneladas em 2025 (+46% sobre 2024 e +26% sobre 2016), e o limão cresceu 90% desde 2016. A cana-de-açúcar fez o caminho inverso: caiu 55% no mesmo período, de 663 mil para 296 mil toneladas.</li>
+            <li><strong>Ligação com o comércio exterior.</strong> Laranja e outros cítricos respondem por 6,9% das exportações do município em 2025, e a ração animal, derivada da cadeia agroindustrial, por 10,9%. A produção local alimenta uma pauta exportadora relevante.</li>
+            <li><strong>Cautela.</strong> Soja (+1.138% desde 2016) e abacate crescem sobre bases pequenas (15,6 mil e 7,7 mil toneladas), por isso a variação percentual exagera o peso real.</li>
+          </ul>
+        </details>
+
+        <div id="ag-panorama" class="comex-kpis" aria-live="polite"></div>
+
+        <div class="chart-card comex-dest-card">
+          <h3>Produção em 2025 por cultura (toneladas)</h3>
+          <ul id="ag-rank" class="comex-dest ag-rank"></ul>
+          <p class="comex-dest-note">Toque ou clique em uma cultura para ver a evolução dela abaixo. Ao lado de cada valor, a variação desde 2016.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="por-cultura" class="section section-tinted comex-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Evolução por cultura</span>
+          <h2>Dez anos de produção, cultura a cultura.</h2>
+          <p>Toneladas produzidas de 2016 a 2025, com a variação ano a ano. Escolha uma cultura.</p>
+        </div>
+
+        <div id="agro">
+          <div class="comex-filters ag-filters">
+            <label>Cultura
+              <select id="ag-prod"></select>
+            </label>
+          </div>
+
+          <div class="ag-top">
+            <div class="chart-card ag-chart-card">
+              <h3 id="ag-title"></h3>
+              <div id="ag-chart" class="comex-chart"></div>
+              <p class="comex-note">Barras: toneladas. Abaixo dos anos: variação sobre o ano anterior.</p>
+            </div>
+            <div id="ag-kpis" class="ag-kpis" aria-live="polite"></div>
+          </div>
+
+          <details class="note-more"><summary>Como ler estes dados</summary><p class="comex-note">
+            Quantidade produzida em toneladas; "—" indica ausência de produção ou de dado. Culturas sem produção em 2025
+            não são exibidas. A variação percentual de culturas pequenas pode parecer grande mesmo com pouca mudança em toneladas.
+          </p></details>
+        </div>
+
+        <p class="section-source">Fonte: Sidra IBGE (Produção Agrícola Municipal).</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <strong>Mogi Mirim em dados</strong>
+      </div>
+
+      <p>
+        © 2026 Mogi Mirim em dados. Conteúdo informativo e independente,
+        elaborado a partir de dados públicos sobre o município.
+        Por Luís Eduardo Vischi.
+      </p>
+
+      <nav class="footer-nav" aria-label="Páginas do site"><a href="index.html">Início</a><a href="economia.html">Economia</a><a href="agricultura.html">Agricultura</a><a href="comercio-exterior.html">Comércio exterior</a><a href="territorio.html">Território</a><a href="investir.html">Investir</a></nav>
+
+      <a href="#inicio" class="footer-top">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="agro-data.js"></script>
+  <script src="agro.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -7,14 +7,27 @@
   <title>Território e infraestrutura | Mogi Mirim em dados</title>
 
   <meta name="description" content="Localização, rodovias, distâncias, infraestrutura urbana e clima de Mogi Mirim (SP)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Mogi Mirim em dados" />
+  <meta property="og:title" content="Território e infraestrutura | Mogi Mirim em dados" />
+  <meta property="og:description" content="Localização, rodovias, distâncias, infraestrutura urbana e clima de Mogi Mirim (SP)." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/territorio.html" />
+  <meta property="og:image" content="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mogi Mirim em dados: 13.280 empresas, US$ 72 milhões exportados em 2025 para 58 países" />
+  <link rel="canonical" href="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/territorio.html" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23129138%22/><circle cx=%2235%22 cy=%2235%22 r=%2214%22 fill=%22%23faba01%22/><circle cx=%2262%22 cy=%2262%22 r=%2216%22 fill=%22%23db1225%22/></svg>" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tema-formal.css" />
 </head>
 
 <body>
@@ -39,6 +52,7 @@
       <nav class="main-nav" id="main-nav">
         <a href="index.html">Início</a>
         <a href="economia.html">Economia</a>
+        <a href="agricultura.html">Agricultura</a>
         <a href="comercio-exterior.html">Comércio exterior</a>
         <a href="territorio.html" aria-current="page">Território</a>
         <a href="investir.html">Investir</a>
@@ -59,9 +73,17 @@
       <div class="container">
         <div class="section-heading">
           <span class="section-label">Localização</span>
-          <h2>Posição logística.</h2>
+          <h2>A 85 km de Viracopos, com ferrovia até o Porto de Santos.</h2>
           <p>A 40 minutos de Campinas, perto de Viracopos e de rodovias que levam a portos e aeroportos.</p>
         </div>
+
+        <details class="insight" data-collapse-mobile open>
+          <summary>Principais conclusões</summary>
+          <ul>
+            <li><strong>Posição de escoamento.</strong> Viracopos fica a cerca de 85 km, e Guarulhos e a capital, entre 150 e 165 km, todos por rodovia. A ferrovia de cargas liga a região ao Porto de Santos. Para uma empresa que exporta ou importa, isso reduz o tempo entre a fábrica e o ponto de embarque.</li>
+            <li><strong>Ponto de atenção.</strong> As distâncias são aproximadas. Em um estudo de custo logístico, vale refazer o cálculo com a origem e o destino reais da carga.</li>
+          </ul>
+        </details>
 
         <div class="map-wrap">
           <svg class="location-map" viewBox="0 0 900 760" role="img" aria-labelledby="map-title map-desc">
@@ -208,19 +230,14 @@
       <div class="container">
         <div class="section-heading">
           <span class="section-label">Infraestrutura</span>
-          <h2>Abastecimento e saneamento.</h2>
-          <p>Dezenas de reservatórios sustentam a estabilidade do fornecimento de água à população e à indústria.</p>
+          <h2>95% do esgoto tratado e água para crescer.</h2>
+          <p>Uma rede de reservatórios distribuídos pelo município sustenta a estabilidade do fornecimento de água à população e à indústria.</p>
         </div>
 
-        <div class="infra-grid">
+        <div class="infra-grid infra-grid-3">
           <article class="infra-card">
             <strong class="infra-number">520 L/s</strong>
             <span class="infra-label">Capacidade máxima de tratamento de água</span>
-          </article>
-
-          <article class="infra-card">
-            <strong class="infra-number">Dezenas</strong>
-            <span class="infra-label">De reservatórios distribuídos pela rede</span>
           </article>
 
           <article class="infra-card">
@@ -239,14 +256,6 @@
           atender ao crescimento populacional e industrial de Mogi Mirim pelas
           próximas três décadas.
         </p>
-
-        <details class="insight" data-collapse-mobile open>
-          <summary>Notas</summary>
-          <ul>
-            <li><strong>Posição de escoamento.</strong> Viracopos fica a cerca de 85 km, e Guarulhos e a capital, entre 150 e 165 km, todos por rodovia. A ferrovia de cargas liga a região ao Porto de Santos. Para uma empresa que exporta ou importa, isso reduz o tempo entre a fábrica e o ponto de embarque.</li>
-            <li><strong>Ponto de atenção.</strong> As distâncias são aproximadas. Em um estudo de custo logístico, vale refazer o cálculo com a origem e o destino reais da carga.</li>
-          </ul>
-        </details>
 
         <p class="section-source">Fonte: Portal Oficial do Município.</p>
       </div>
@@ -314,7 +323,9 @@
         Por Luís Eduardo Vischi.
       </p>
 
-      <a href="#inicio">Voltar ao topo</a>
+      <nav class="footer-nav" aria-label="Páginas do site"><a href="index.html">Início</a><a href="economia.html">Economia</a><a href="agricultura.html">Agricultura</a><a href="comercio-exterior.html">Comércio exterior</a><a href="territorio.html">Território</a><a href="investir.html">Investir</a></nav>
+
+      <a href="#inicio" class="footer-top">Voltar ao topo ↑</a>
     </div>
   </footer>
 

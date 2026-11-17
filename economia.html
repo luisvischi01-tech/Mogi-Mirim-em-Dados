@@ -6,15 +6,28 @@
 
   <title>Economia | Mogi Mirim em dados</title>
 
-  <meta name="description" content="Estrutura empresarial, produção agrícola e emprego formal de Mogi Mirim (SP), com dados do Sidra/IBGE e do Novo CAGED." />
+  <meta name="description" content="Estrutura empresarial e emprego formal de Mogi Mirim (SP), com dados da base de CNPJs e do Novo CAGED." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Mogi Mirim em dados" />
+  <meta property="og:title" content="Economia | Mogi Mirim em dados" />
+  <meta property="og:description" content="Estrutura empresarial e emprego formal de Mogi Mirim (SP), com dados da base de CNPJs e do Novo CAGED." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/economia.html" />
+  <meta property="og:image" content="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mogi Mirim em dados: 13.280 empresas, US$ 72 milhões exportados em 2025 para 58 países" />
+  <link rel="canonical" href="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/economia.html" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23129138%22/><circle cx=%2235%22 cy=%2235%22 r=%2214%22 fill=%22%23faba01%22/><circle cx=%2262%22 cy=%2262%22 r=%2216%22 fill=%22%23db1225%22/></svg>" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tema-formal.css" />
 </head>
 
 <body>
@@ -39,6 +52,7 @@
       <nav class="main-nav" id="main-nav">
         <a href="index.html">Início</a>
         <a href="economia.html" aria-current="page">Economia</a>
+        <a href="agricultura.html">Agricultura</a>
         <a href="comercio-exterior.html">Comércio exterior</a>
         <a href="territorio.html">Território</a>
         <a href="investir.html">Investir</a>
@@ -51,60 +65,26 @@
       <div class="container">
         <span class="section-label">Economia</span>
         <h1>Economia local</h1>
-        <p>Produção agrícola, estrutura empresarial e emprego formal do município.</p>
-        <nav class="page-chips" aria-label="Nesta página"><a href="#producao-agricola">Agricultura</a><a href="#estrutura-empresarial">Empresas</a><a href="#mercado-de-trabalho">Emprego</a></nav>
+        <p>Estrutura empresarial e emprego formal do município.</p>
+        <nav class="page-chips" aria-label="Nesta página"><a href="#estrutura-empresarial">Empresas</a><a href="#mercado-de-trabalho">Emprego</a><a href="agricultura.html">Agricultura →</a></nav>
       </div>
     </section>
-    <section id="producao-agricola" class="section comex-section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label">Produção agrícola</span>
-          <h2>Produção por cultura, 2016–2025.</h2>
-          <p>Toneladas produzidas e variação ano a ano. Escolha uma cultura.</p>
-        </div>
-
-        <div id="agro">
-          <div class="comex-filters ag-filters">
-            <label>Cultura
-              <select id="ag-prod"></select>
-            </label>
-          </div>
-
-          <div class="ag-top">
-            <div class="chart-card ag-chart-card">
-              <h3 id="ag-title"></h3>
-              <div id="ag-chart" class="comex-chart"></div>
-              <p class="comex-note">Barras: toneladas. Abaixo dos anos: variação sobre o ano anterior.</p>
-            </div>
-            <div id="ag-kpis" class="ag-kpis" aria-live="polite"></div>
-          </div>
-
-
-          <details class="note-more"><summary>Como ler estes dados</summary><p class="comex-note">
-            Quantidade produzida em toneladas; "—" indica ausência de produção ou de dado. Culturas sem produção em 2025
-            não são exibidas. Escolha a cultura no seletor para ver o gráfico e os indicadores.
-          </p></details>
-        </div>
-
-        <details class="insight" data-collapse-mobile open>
-          <summary>Notas</summary>
-          <ul>
-            <li><strong>Os citros ganham espaço.</strong> A laranja chegou a 176,8 mil toneladas em 2025 (+46% sobre 2024 e +26% sobre 2016), e o limão cresceu 90% desde 2016. A cana-de-açúcar fez o caminho inverso: caiu 55% no mesmo período, de 663 mil para 296 mil toneladas.</li>
-            <li><strong>Ligação com o comércio exterior.</strong> Laranja e outros cítricos respondem por 6,9% das exportações do município em 2025, e a ração animal, derivada da cadeia agroindustrial, por 10,9%. A produção local alimenta uma pauta exportadora relevante.</li>
-            <li><strong>Cautela.</strong> Soja (+1.138% desde 2016) e abacate crescem sobre bases pequenas (15,6 mil e 7,7 mil toneladas), por isso a variação percentual exagera o peso real.</li>
-          </ul>
-        </details>
-
-        <p class="section-source">Fonte: Sidra IBGE (Produção Agrícola Municipal).</p>
-      </div>
-    </section>
-    <section id="estrutura-empresarial" class="section section-tinted">
+    <section id="estrutura-empresarial" class="section">
       <div class="container">
         <div class="section-heading">
           <span class="section-label">Estrutura empresarial</span>
-          <h2>Empresas por setor e porte.</h2>
+          <h2>13,3 mil empresas, com predomínio de pequenos negócios.</h2>
           <p>Registros de CNPJ por atividade principal e por porte.</p>
         </div>
+
+        <details class="insight" data-collapse-mobile open>
+          <summary>Principais conclusões</summary>
+          <ul>
+            <li><strong>Base empresarial pulverizada.</strong> Dos 13.280 registros, MEI e microempresas somam 67,5%, e as pequenas empresas, 5,8%. Esse porte caracteriza um ecossistema de fornecedores, mais do que de grandes plantas. O MEI é estimativa, conforme a nota acima.</li>
+            <li><strong>Indústria enxuta e voltada a metal e manutenção.</strong> A indústria de transformação reúne 1.079 registros (8,1% do total). Manutenção de máquinas (211) e produtos de metal (188) somam 37% do setor, e fabricação de máquinas e equipamentos tem 43. Esse perfil conversa com a pauta exportadora, em que autopeças e artefatos metálicos aparecem entre os principais produtos.</li>
+            <li><strong>Logística como setor próprio.</strong> Transporte e logística somam 738 registros (5,6% do total), mais do que a metade do número de registros da indústria de transformação (1.079), o que indica estrutura local de apoio à movimentação de cargas.</li>
+          </ul>
+        </details>
 
         <div id="empresas">
           <div id="em-kpis" class="comex-kpis comex-kpis-6"></div>
@@ -131,24 +111,24 @@
           </p></details>
         </div>
 
-        <details class="insight" data-collapse-mobile open>
-          <summary>Notas</summary>
-          <ul>
-            <li><strong>Base empresarial pulverizada.</strong> Dos 13.280 registros, MEI e microempresas somam 67,5%, e as pequenas empresas, 5,8%. Esse porte caracteriza um ecossistema de fornecedores, mais do que de grandes plantas. O MEI é estimativa, conforme a nota acima.</li>
-            <li><strong>Indústria enxuta e voltada a metal e manutenção.</strong> A indústria de transformação reúne 1.079 registros (8,1% do total). Manutenção de máquinas (211) e produtos de metal (188) somam 37% do setor, e fabricação de máquinas e equipamentos tem 43. Esse perfil conversa com a pauta exportadora, em que autopeças e artefatos metálicos aparecem entre os principais produtos.</li>
-            <li><strong>Logística como setor próprio.</strong> Transporte e logística somam 738 registros (5,6% do total), mais do que a metade do número de registros da indústria de transformação (1.079), o que indica estrutura local de apoio à movimentação de cargas.</li>
-          </ul>
-        </details>
-
       </div>
     </section>
-    <section id="mercado-de-trabalho" class="section">
+    <section id="mercado-de-trabalho" class="section section-tinted">
       <div class="container">
         <div class="section-heading">
           <span class="section-label">Mercado de trabalho</span>
-          <h2>Emprego formal desde 2020.</h2>
+          <h2>Saldo de 6 mil empregos formais desde 2020, com desaceleração recente.</h2>
           <p>Saldo mensal entre admissões e desligamentos, segundo o Novo CAGED.</p>
         </div>
+
+        <details class="insight" data-collapse-mobile open>
+          <summary>Principais conclusões</summary>
+          <ul>
+            <li><strong>Desaceleração recente.</strong> O saldo caiu de +1.633 em 2024 para +202 em 2025. Outubro a dezembro de 2025 somaram −725, e os nove primeiros meses de 2026 (+361) ficaram abaixo dos de 2025 (+927). A série não traz as causas, então a leitura é de arrefecimento, e não de diagnóstico.</li>
+            <li><strong>Indústria retém mais.</strong> Em setembro/2026, o tempo médio de emprego na indústria foi de 26,9 meses, contra 12,7 no comércio e 10,2 na construção. Quem planeja contratar mão de obra industrial encontra uma base com vínculos mais longos.</li>
+            <li><strong>Sazonalidade.</strong> Dezembro fecha negativo todos os anos de 2021 a 2025, o que importa para quem planeja contratações e metas de headcount.</li>
+          </ul>
+        </details>
 
         <div id="caged">
           <div id="cg-kpis" class="comex-kpis"></div>
@@ -189,15 +169,6 @@
           </p></details>
         </div>
 
-        <details class="insight" data-collapse-mobile open>
-          <summary>Notas</summary>
-          <ul>
-            <li><strong>Desaceleração recente.</strong> O saldo caiu de +1.633 em 2024 para +202 em 2025. Outubro a dezembro de 2025 somaram −725, e os nove primeiros meses de 2026 (+361) ficaram abaixo dos de 2025 (+927). A série não traz as causas, então a leitura é de arrefecimento, e não de diagnóstico.</li>
-            <li><strong>Indústria retém mais.</strong> Em setembro/2026, o tempo médio de emprego na indústria foi de 26,9 meses, contra 12,7 no comércio e 10,2 na construção. Quem planeja contratar mão de obra industrial encontra uma base com vínculos mais longos.</li>
-            <li><strong>Sazonalidade.</strong> Dezembro fecha negativo todos os anos de 2021 a 2025, o que importa para quem planeja contratações e metas de headcount.</li>
-          </ul>
-        </details>
-
         <p class="section-source">Fonte: Novo CAGED, Ministério do Trabalho e Emprego.</p>
       </div>
     </section>
@@ -216,12 +187,12 @@
         Por Luís Eduardo Vischi.
       </p>
 
-      <a href="#inicio">Voltar ao topo</a>
+      <nav class="footer-nav" aria-label="Páginas do site"><a href="index.html">Início</a><a href="economia.html">Economia</a><a href="agricultura.html">Agricultura</a><a href="comercio-exterior.html">Comércio exterior</a><a href="territorio.html">Território</a><a href="investir.html">Investir</a></nav>
+
+      <a href="#inicio" class="footer-top">Voltar ao topo ↑</a>
     </div>
   </footer>
 
-  <script src="agro-data.js"></script>
-  <script src="agro.js"></script>
   <script src="empresas-data.js"></script>
   <script src="empresas.js"></script>
   <script src="caged-data.js"></script>

@@ -5,11 +5,11 @@
   if (!D || !root) return;
 
   var CATS = [
-    { k: "MEI e empresário individual (estimado)", s: "MEI/EI", color: "#129138" },
-    { k: "Microempresa", s: "Micro", color: "#d9a000" },
-    { k: "Pequena empresa", s: "Pequena", color: "#db1225" },
-    { k: "Média/grande (conforme a base)", s: "Média/grande", color: "#14181a" },
-    { k: "Produtor rural pessoa física", s: "Produtor rural", color: "#8fbf9f" }
+    { k: "MEI e empresário individual (estimado)", s: "MEI/EI", color: "#b7dbc3" },
+    { k: "Microempresa", s: "Micro", color: "#6cb385" },
+    { k: "Pequena empresa", s: "Pequena", color: "#2c8a4f" },
+    { k: "Média/grande (conforme a base)", s: "Média/grande", color: "#0b4f24" },
+    { k: "Produtor rural pessoa física", s: "Produtor rural", color: "#d6a93a" }
   ];
   var nf = new Intl.NumberFormat("pt-BR");
   var nfp = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
@@ -22,7 +22,7 @@
 
   var T = D.total, TT = sum(T);
   el.kpis.innerHTML = [["Registros na base", nf.format(TT), "green"]].concat(CATS.map(function (c, i) {
-    return [["MEI e empresários indiv.*","Microempresa","Pequena empresa","Média/grande","Produtor rural PF"][i], nf.format(T[i]) + " · " + nfp.format(T[i] / TT * 100) + "%", ["green", "yellow", "red", "green", "yellow"][i]];
+    return [["MEI / empresário individual*","Microempresa","Pequena empresa","Média/grande","Produtor rural PF"][i], nf.format(T[i]) + "<small>" + nfp.format(T[i] / TT * 100) + "%</small>", ["green", "yellow", "red", "green", "yellow"][i]];
   })).map(function (x) {
     return '<div class="comex-kpi" data-tone="' + x[2] + '"><span>' + x[0] + "</span><strong>" + x[1] + "</strong></div>";
   }).join("");

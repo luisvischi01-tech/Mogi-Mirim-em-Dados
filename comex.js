@@ -10,7 +10,7 @@
   var YEARS = D.meta.anos;
   var NY = YEARS.length;
   var PAGE_SIZE = 8;
-  var COLOR_EXP = "#129138";
+  var COLOR_EXP = "#0f7a36";
   var COLOR_IMP = "#d9a000";
 
   var $ = function (id) {

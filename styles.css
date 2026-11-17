@@ -823,6 +823,12 @@ h3 {
   margin-bottom: 28px;
 }
 
+@media (min-width: 701px) {
+  .infra-grid.infra-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .infra-card {
   padding: 26px 22px;
   border: 1px solid var(--border);
@@ -1703,11 +1709,19 @@ textarea:focus {
 /* Estrutura empresarial */
 
 .comex-kpis-6 {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .comex-kpis-6 .comex-kpi strong {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
+}
+
+.comex-kpi strong small {
+  margin-left: 6px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
 }
 
 .em-card {
@@ -2238,3 +2252,20 @@ details.insight[open] > summary { margin-bottom: 8px; }
   .stat-card .stat-label { font-size: .8rem; }
   .comex-filters select, .comex-filters input { width: 100%; max-width: 100%; }
 }
+
+
+/* ===== Organização por público (rodada 2) ===== */
+/* Início: 8 indicadores em 4 colunas */
+@media (min-width: 981px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+.stat-card-link { display: block; transition: border-color .2s ease, transform .2s ease; }
+.stat-card-link:hover, .stat-card-link:focus-visible { border-color: var(--green); transform: translateY(-2px); }
+.stat-card-link .stat-label::after { content: " →"; color: var(--green); font-weight: 700; }
+
+/* Conclusões antes dos gráficos */
+.section-heading + details.insight, .container > details.insight:first-child { margin-top: 0; margin-bottom: 22px; }
+
+/* Rodapé com navegação */
+.footer-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.footer-nav a { color: rgba(255,255,255,.85); font-weight: 600; font-size: .9rem; }
+.footer-nav a:hover { color: var(--yellow); }
+@media (max-width: 700px) { .footer-nav { justify-content: center; } }

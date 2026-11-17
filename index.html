@@ -7,14 +7,27 @@
   <title>Conheça Mogi Mirim com dados | Mogi Mirim em dados</title>
 
   <meta name="description" content="Indicadores econômicos, localização, infraestrutura e serviços de Mogi Mirim (SP), com base em dados públicos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Mogi Mirim em dados" />
+  <meta property="og:title" content="Conheça Mogi Mirim com dados | Mogi Mirim em dados" />
+  <meta property="og:description" content="Indicadores econômicos, localização, infraestrutura e serviços de Mogi Mirim (SP), com base em dados públicos." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/" />
+  <meta property="og:image" content="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mogi Mirim em dados: 13.280 empresas, US$ 72 milhões exportados em 2025 para 58 países" />
+  <link rel="canonical" href="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23129138%22/><circle cx=%2235%22 cy=%2235%22 r=%2214%22 fill=%22%23faba01%22/><circle cx=%2262%22 cy=%2262%22 r=%2216%22 fill=%22%23db1225%22/></svg>" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tema-formal.css" />
 </head>
 
 <body>
@@ -39,6 +52,7 @@
       <nav class="main-nav" id="main-nav">
         <a href="index.html" aria-current="page">Início</a>
         <a href="economia.html">Economia</a>
+        <a href="agricultura.html">Agricultura</a>
         <a href="comercio-exterior.html">Comércio exterior</a>
         <a href="territorio.html">Território</a>
         <a href="investir.html">Investir</a>
@@ -48,14 +62,9 @@
 
   <main id="inicio">
     <section class="hero">
-      <div class="hero-circles" aria-hidden="true">
-        <span class="circle circle-yellow"></span>
-        <span class="circle circle-green"></span>
-        <span class="circle circle-red"></span>
-      </div>
-
       <div class="container hero-grid">
         <div class="hero-content">
+          <span class="section-label hero-kicker">Portal de dados municipais</span>
           <h1>
             Conheça<br />
             <span class="hero-city">Mogi Mirim</span><br />
@@ -68,6 +77,7 @@
 
           <div class="hero-actions">
             <a href="#indicadores" class="button primary">Ver indicadores</a>
+            <a href="economia.html" class="button secondary">Explorar a economia</a>
           </div>
         </div>
 
@@ -141,6 +151,124 @@
         </div>
       </div>
     </section>
+    <section id="indicadores" class="section section-tinted">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Indicadores</span>
+          <h2>Mogi Mirim em números.</h2>
+          <p>Os principais indicadores sociais e econômicos do município, em um só lugar.</p>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <div class="stat-icon" data-tone="green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><circle cx="17" cy="9" r="2.3"/><path d="M14.8 14.3c2.6.2 4.7 2.5 4.7 5.7"/></svg>
+            </div>
+            <strong class="stat-number">95.742</strong>
+            <span class="stat-label">Habitantes</span>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-icon" data-tone="yellow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8l10-4 10 4-10 4-10-4Z"/><path d="M6 10.5V16c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5.5"/><path d="M22 8v6"/></svg>
+            </div>
+            <strong class="stat-number">98%</strong>
+            <span class="stat-label">Escolarização infantil</span>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-icon" data-tone="red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+            </div>
+            <strong class="stat-number">R$ 87.434</strong>
+            <span class="stat-label">PIB per capita</span>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-icon" data-tone="green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.4-9.5 9-9.5 9Z"/></svg>
+            </div>
+            <strong class="stat-number stat-number-text">Investimento em Saúde Pública</strong>
+            <span class="stat-label">Funcionamento estendido de UBS e compras de equipamentos modernos</span>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-icon" data-tone="yellow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 15l2.5-6L13 13l3-6"/></svg>
+            </div>
+            <strong class="stat-number">0,784</strong>
+            <span class="stat-label">IDH</span>
+          </article>
+
+          <a class="stat-card stat-card-link" href="economia.html#estrutura-empresarial">
+            <div class="stat-icon" data-tone="red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M5 21V8l5 3V8l5 3V5h4v16"/></svg>
+            </div>
+            <strong class="stat-number">13.280</strong>
+            <span class="stat-label">Empresas registradas (CNPJ)</span>
+          </a>
+
+          <a class="stat-card stat-card-link" href="economia.html#mercado-de-trabalho">
+            <div class="stat-icon" data-tone="green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>
+            </div>
+            <strong class="stat-number">29.079</strong>
+            <span class="stat-label">Empregos formais (set/2026)</span>
+          </a>
+
+          <a class="stat-card stat-card-link" href="comercio-exterior.html">
+            <div class="stat-icon" data-tone="yellow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg>
+            </div>
+            <strong class="stat-number">US$ 72,1 mi</strong>
+            <span class="stat-label">Exportados em 2025, para 58 países</span>
+          </a>
+        </div>
+
+        <p class="section-source">Fontes: IBGE, Portal Oficial do Município, base de CNPJs, Novo CAGED e Comex Stat.</p>
+      </div>
+    </section>
+    <section id="explorar" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Explore o município</span>
+          <h2>Cinco caminhos pelos dados de Mogi Mirim.</h2>
+        </div>
+
+        <div class="explore-grid">
+          <a class="explore-card" href="economia.html" data-tone="green">
+            <span class="explore-tag">Economia</span>
+            <h3>Empresas e emprego</h3>
+            <p>Estrutura empresarial por porte e setor e saldo mensal de empregos formais desde 2020.</p>
+            <span class="explore-go">Ver economia →</span>
+          </a>
+          <a class="explore-card" href="agricultura.html" data-tone="green">
+            <span class="explore-tag">Agricultura</span>
+            <h3>Produção agrícola local</h3>
+            <p>Produção de 16 culturas de 2016 a 2025, com o avanço dos citros e a queda da cana-de-açúcar.</p>
+            <span class="explore-go">Ver agricultura →</span>
+          </a>
+          <a class="explore-card" href="comercio-exterior.html" data-tone="yellow">
+            <span class="explore-tag">Comércio exterior</span>
+            <h3>Exportações e importações</h3>
+            <p>US$ 72,1 milhões exportados em 2025 para 58 países, com filtros por produto, setor e destino.</p>
+            <span class="explore-go">Ver comércio exterior →</span>
+          </a>
+          <a class="explore-card" href="territorio.html" data-tone="red">
+            <span class="explore-tag">Território</span>
+            <h3>Localização e infraestrutura</h3>
+            <p>Mapa de rodovias, distâncias a aeroportos e à capital, infraestrutura urbana e clima.</p>
+            <span class="explore-go">Ver território →</span>
+          </a>
+          <a class="explore-card" href="investir.html" data-tone="green">
+            <span class="explore-tag">Investir</span>
+            <h3>Incentivos, formação e serviços</h3>
+            <p>Leis municipais de incentivo fiscal, oferta de ensino técnico e superior e serviços de apoio a empresas.</p>
+            <span class="explore-go">Ver como investir →</span>
+          </a>
+        </div>
+      </div>
+    </section>
     <section id="sobre" class="section">
       <div class="container two-columns">
         <div>
@@ -185,94 +313,6 @@
         </div>
       </div>
     </section>
-    <section id="indicadores" class="section section-tinted">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label">Indicadores</span>
-          <h2>Indicadores municipais.</h2>
-          <p>Saúde, educação e economia em números.</p>
-        </div>
-
-        <div class="stats-grid">
-          <article class="stat-card">
-            <div class="stat-icon" data-tone="green">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><circle cx="17" cy="9" r="2.3"/><path d="M14.8 14.3c2.6.2 4.7 2.5 4.7 5.7"/></svg>
-            </div>
-            <strong class="stat-number">95.742</strong>
-            <span class="stat-label">Habitantes</span>
-          </article>
-
-          <article class="stat-card">
-            <div class="stat-icon" data-tone="yellow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8l10-4 10 4-10 4-10-4Z"/><path d="M6 10.5V16c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5.5"/><path d="M22 8v6"/></svg>
-            </div>
-            <strong class="stat-number">98%</strong>
-            <span class="stat-label">Escolarização infantil</span>
-          </article>
-
-          <article class="stat-card">
-            <div class="stat-icon" data-tone="red">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
-            </div>
-            <strong class="stat-number">R$ 87.434</strong>
-            <span class="stat-label">PIB per capita</span>
-          </article>
-
-          <article class="stat-card">
-            <div class="stat-icon" data-tone="green">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.4-9.5 9-9.5 9Z"/></svg>
-            </div>
-            <strong class="stat-number stat-number-text">Investimento em Saúde Pública</strong>
-            <span class="stat-label">Funcionamento estendido de UBS e compras de equipamentos modernos</span>
-          </article>
-
-          <article class="stat-card">
-            <div class="stat-icon" data-tone="yellow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 15l2.5-6L13 13l3-6"/></svg>
-            </div>
-            <strong class="stat-number">0,784</strong>
-            <span class="stat-label">IDH</span>
-          </article>
-        </div>
-
-        <p class="section-source">Fonte: IBGE e Portal Oficial do Município.</p>
-      </div>
-    </section>
-    <section id="explorar" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label">Explore o município</span>
-          <h2>Quatro caminhos pelos dados de Mogi Mirim.</h2>
-        </div>
-
-        <div class="explore-grid">
-          <a class="explore-card" href="economia.html" data-tone="green">
-            <span class="explore-tag">Economia</span>
-            <h3>Empresas, agricultura e emprego</h3>
-            <p>Estrutura empresarial por porte e setor, produção agrícola de 2016 a 2025 e saldo mensal de empregos formais desde 2020.</p>
-            <span class="explore-go">Ver economia →</span>
-          </a>
-          <a class="explore-card" href="comercio-exterior.html" data-tone="yellow">
-            <span class="explore-tag">Comércio exterior</span>
-            <h3>Exportações e importações</h3>
-            <p>US$ 72,1 milhões exportados em 2025 para 58 países, com filtros por produto, setor e destino.</p>
-            <span class="explore-go">Ver comércio exterior →</span>
-          </a>
-          <a class="explore-card" href="territorio.html" data-tone="red">
-            <span class="explore-tag">Território</span>
-            <h3>Localização e infraestrutura</h3>
-            <p>Mapa de rodovias, distâncias a aeroportos e à capital, infraestrutura urbana e clima.</p>
-            <span class="explore-go">Ver território →</span>
-          </a>
-          <a class="explore-card" href="investir.html" data-tone="green">
-            <span class="explore-tag">Investir</span>
-            <h3>Incentivos, formação e serviços</h3>
-            <p>Leis municipais de incentivo fiscal, oferta de ensino técnico e superior e serviços de apoio a empresas.</p>
-            <span class="explore-go">Ver como investir →</span>
-          </a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -288,7 +328,9 @@
         Por Luís Eduardo Vischi.
       </p>
 
-      <a href="#inicio">Voltar ao topo</a>
+      <nav class="footer-nav" aria-label="Páginas do site"><a href="index.html">Início</a><a href="economia.html">Economia</a><a href="agricultura.html">Agricultura</a><a href="comercio-exterior.html">Comércio exterior</a><a href="territorio.html">Território</a><a href="investir.html">Investir</a></nav>
+
+      <a href="#inicio" class="footer-top">Voltar ao topo ↑</a>
     </div>
   </footer>
 

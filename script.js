@@ -15,34 +15,6 @@ if (menuToggle && mainNav) {
   });
 }
 
-const contactForm = document.querySelector(".contact-form");
-const formError = document.querySelector(".form-error");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (!contactForm.checkValidity()) {
-      if (formError) {
-        formError.textContent = "Preencha todos os campos obrigatórios antes de enviar.";
-        formError.hidden = false;
-      }
-      contactForm.reportValidity();
-      return;
-    }
-
-    if (formError) {
-      formError.hidden = true;
-    }
-
-    alert(
-      "Mensagem registrada para demonstração. Para envio real, será necessário integrar o formulário a um serviço de e-mail ou backend."
-    );
-
-    contactForm.reset();
-  });
-}
-
 /* Tooltip global: qualquer elemento com data-tip mostra os valores ao passar o cursor, focar ou tocar */
 (function () {
   var tip = document.createElement("div");

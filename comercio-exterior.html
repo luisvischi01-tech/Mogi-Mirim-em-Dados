@@ -7,14 +7,27 @@
   <title>Comércio exterior | Mogi Mirim em dados</title>
 
   <meta name="description" content="Exportações e importações de Mogi Mirim (SP) de 2016 a 2026, por produto, setor e país, com dados do Comex Stat." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Mogi Mirim em dados" />
+  <meta property="og:title" content="Comércio exterior | Mogi Mirim em dados" />
+  <meta property="og:description" content="Exportações e importações de Mogi Mirim (SP) de 2016 a 2026, por produto, setor e país, com dados do Comex Stat." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/comercio-exterior.html" />
+  <meta property="og:image" content="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mogi Mirim em dados: 13.280 empresas, US$ 72 milhões exportados em 2025 para 58 países" />
+  <link rel="canonical" href="https://luisvischi01-tech.github.io/Mogi-Mirim-em-Dados/comercio-exterior.html" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23129138%22/><circle cx=%2235%22 cy=%2235%22 r=%2214%22 fill=%22%23faba01%22/><circle cx=%2262%22 cy=%2262%22 r=%2216%22 fill=%22%23db1225%22/></svg>" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tema-formal.css" />
 </head>
 
 <body>
@@ -39,6 +52,7 @@
       <nav class="main-nav" id="main-nav">
         <a href="index.html">Início</a>
         <a href="economia.html">Economia</a>
+        <a href="agricultura.html">Agricultura</a>
         <a href="comercio-exterior.html" aria-current="page">Comércio exterior</a>
         <a href="territorio.html">Território</a>
         <a href="investir.html">Investir</a>
@@ -51,11 +65,19 @@
       <div class="container">
         <span class="section-label">Comércio exterior</span>
         <h1>Exportações e importações</h1>
-        <p>Série de 2016 a 2026 por produto, setor e país de origem ou destino.</p>
+        <p>US$ 72,1 milhões exportados em 2025 para 58 países. Série de 2016 a 2026 por produto, setor e país de origem ou destino.</p>
       </div>
     </section>
     <section id="comercio-exterior" class="section comex-section">
       <div class="container">
+        <details class="insight" data-collapse-mobile open>
+          <summary>Principais conclusões</summary>
+          <ul>
+            <li><strong>Exportações estáveis, em patamar de US$ 72 milhões.</strong> O valor de 2025 ficou 1,6% abaixo de 2016 e 18% abaixo do pico de 2023 (US$ 88,3 milhões). O pior ano foi 2020 (US$ 49,4 milhões), e a recuperação veio em 2022 e 2023.</li>
+            <li><strong>Pauta diversificada, destino concentrado.</strong> Nenhum setor passa de 23,4% (máquinas e equipamentos), e o maior produto, autopeças, tem 18,5%. Já os Estados Unidos recebem 29,3% das vendas, e EUA, Argentina, México e Chile juntos somam 52,7%. Vendas para 58 países mostram alcance, mas a dependência regional é alta.</li>
+            <li><strong>Perfil importador.</strong> As importações chegaram a US$ 172,5 milhões em 2025, 2,4 vezes as exportações e 2,9 vezes o valor de 2016. Fertilizantes são 24,6% do total, e a China é a origem de 29%. É um município com demanda recorrente por logística de importação, desembaraço e conformidade aduaneira.</li>          </ul>
+        </details>
+
         <div id="comex">
           <details class="filter-box" data-collapse-mobile open>
             <summary>Filtros</summary>
@@ -95,7 +117,7 @@
             <div class="chart-card">
               <h3>Evolução anual (US$ FOB)</h3>
               <div class="comex-legend">
-                <span><i style="background:#129138"></i>Exportação</span>
+                <span><i style="background:#0f7a36"></i>Exportação</span>
                 <span><i style="background:#d9a000"></i>Importação</span>
               </div>
               <div id="cx-annual" class="comex-chart"></div>
@@ -117,18 +139,9 @@
             Valores em dólares norte-americanos, preço FOB, sem correção monetária.
             * 2026 refere-se a período parcial, conforme a data de extração. SH2 e SH4:
             capítulos e posições do Sistema Harmonizado. Nomes de produtos e setores foram simplificados para facilitar a leitura; a descrição oficial está disponível na base de origem.
+            O Comex Stat atribui a operação ao município do domicílio da empresa declarante, não necessariamente ao local de produção.
           </p></details>
         </div>
-
-        <details class="insight" data-collapse-mobile open>
-          <summary>Notas</summary>
-          <ul>
-            <li><strong>Exportações estáveis, em patamar de US$ 72 milhões.</strong> O valor de 2025 ficou 1,6% abaixo de 2016 e 18% abaixo do pico de 2023 (US$ 88,3 milhões). O pior ano foi 2020 (US$ 49,4 milhões), e a recuperação veio em 2022 e 2023.</li>
-            <li><strong>Pauta diversificada, destino concentrado.</strong> Nenhum setor passa de 23,4% (máquinas e equipamentos), e o maior produto, autopeças, tem 18,5%. Já os Estados Unidos recebem 29,3% das vendas, e EUA, Argentina, México e Chile juntos somam 52,7%. Vendas para 58 países mostram alcance, mas a dependência regional é alta.</li>
-            <li><strong>Perfil importador.</strong> As importações chegaram a US$ 172,5 milhões em 2025, 2,4 vezes as exportações e 2,9 vezes o valor de 2016. Fertilizantes são 24,6% do total, e a China é a origem de 29%. É um município com demanda recorrente por logística de importação, desembaraço e conformidade aduaneira.</li>
-            <li><strong>Como ler.</strong> O Comex Stat atribui a operação ao município do domicílio da empresa declarante, não necessariamente ao local de produção. O ano de 2026 é parcial e não deve ser comparado com os anos fechados.</li>
-          </ul>
-        </details>
 
         <p class="section-source">Fonte: Comex Stat / Siscomex (MDIC), extração de 17/11/2026.</p>
       </div>
@@ -148,7 +161,9 @@
         Por Luís Eduardo Vischi.
       </p>
 
-      <a href="#inicio">Voltar ao topo</a>
+      <nav class="footer-nav" aria-label="Páginas do site"><a href="index.html">Início</a><a href="economia.html">Economia</a><a href="agricultura.html">Agricultura</a><a href="comercio-exterior.html">Comércio exterior</a><a href="territorio.html">Território</a><a href="investir.html">Investir</a></nav>
+
+      <a href="#inicio" class="footer-top">Voltar ao topo ↑</a>
     </div>
   </footer>
 

@@ -8,8 +8,7 @@
   /* Culturas sem produção em 2025 (série zerada ou encerrada) ficam fora */
   var P = D.produtos.filter(function (p) { return p.v[D.anos.length - 1] > 0; });
   var $ = function (id) { return document.getElementById(id) || document.createElement("select"); };
-  var el = { sel: $("ag-prod"), kpis: $("ag-kpis"), chart: $("ag-chart"), title: $("ag-title"), tipo: $("ag-tipo"), busca: $("ag-busca"),
-    modo: $("ag-modo"), thead: $("ag-thead"), tbody: $("ag-tbody"), resumo: $("ag-resumo") };
+  var el = { sel: $("ag-prod"), kpis: $("ag-kpis"), chart: $("ag-chart"), title: $("ag-title") };
   var nf = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 });
   var nfd = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
@@ -63,7 +62,7 @@
       var cx = L + gw * k + gw / 2, h = has(x) ? x / top * ih : 0, y = T + ih - h, yy = yoy(cur, k);
       var tip = A[k] + "\n" + (has(x) ? "Produção: " + nf.format(x) + " t" : "Produção: não disponível") +
         "\nVariação sobre " + A[k - 1 < 0 ? 0 : k - 1] + ": " + (k === 0 ? "—" : fp(yy)) + "\nVariação sobre " + A[0] + ": " + (k === 0 ? "—" : fp(pct(x, cur.v[0])));
-      out += (h > 0 ? '<rect x="' + (cx - bw / 2) + '" y="' + y + '" width="' + bw + '" height="' + h + '" rx="3" fill="#129138"/>' : "") +
+      out += (h > 0 ? '<rect x="' + (cx - bw / 2) + '" y="' + y + '" width="' + bw + '" height="' + h + '" rx="3" fill="#0f7a36"/>' : "") +
         (has(x) && x > 0 ? '<text class="cx-axis ag-val" x="' + cx + '" y="' + (y - 6) + '" text-anchor="middle">' + short(x) + "</text>" : "") +
         '<text class="cx-axis" x="' + cx + '" y="' + (H - 26) + '" text-anchor="middle">' + A[k] + "</text>" +
         '<text class="ag-yoy ' + cls(yy) + '" x="' + cx + '" y="' + (H - 8) + '" text-anchor="middle">' + (k === 0 ? "" : fp(yy)) + "</text>" +
@@ -73,70 +72,43 @@
     el.chart.innerHTML = out;
   }
 
-  /* Tabela */
-  var state = { sortKey: "ult", dir: -1, modo: "ton" };
-  function value(p, key) {
-    if (key === "n") return p.n;
-    if (key === "t") return p.t;
-    if (key === "tot") return tot(p);
-    if (key === "ult") return has(p.v[N - 1]) ? p.v[N - 1] : -1;
-    var k = +key;
-    return state.modo === "ton" ? (has(p.v[k]) ? p.v[k] : -1) : yoy(p, k);
-  }
-  function list() {
-    var q = norm(el.busca.value.trim()), tipo = el.tipo.value;
-    var l = P.filter(function (p) { return (!tipo || p.t === tipo) && (!q || norm(p.n).indexOf(q) >= 0); });
-    var key = state.sortKey, d = state.dir;
-    l.sort(function (a, b) {
-      var x = value(a, key), y = value(b, key);
-      if (x === null && y === null) return 0;
-      if (x === null) return 1;
-      if (y === null) return -1;
-      if (typeof x === "string") return x.localeCompare(y, "pt-BR") * d;
-      return (x - y) * d;
-    });
-    return l;
-  }
-  function renderTable() {
-    var heads = [["n", "Produto"], ["t", "Tipo"]].concat(A.map(function (a, k) { return [String(k), String(a)]; })).concat([["tot", "Var. " + A[0] + "–" + A[N - 1]]]);
-    el.thead.innerHTML = "<tr>" + heads.map(function (h) {
-      var on = state.sortKey === h[0], num = h[0] !== "n" && h[0] !== "t";
-      return '<th scope="col" aria-sort="' + (on ? (state.dir > 0 ? "ascending" : "descending") : "none") + '"' + (num ? ' class="num"' : "") + '><button type="button" data-sort="' + h[0] + '">' + h[1] + (on ? (state.dir > 0 ? " ▲" : " ▼") : "") + "</button></th>";
-    }).join("") + "</tr>";
-    var l = list();
-    el.tbody.innerHTML = l.length ? l.map(function (p) {
-      var cells = A.map(function (a, k) {
-        var x = p.v[k], y = yoy(p, k);
-        var tip = p.n + " — " + a + "\nProdução: " + (has(x) ? nf.format(x) + " t" : "não disponível") + (k > 0 ? "\nVariação anual: " + fp(y) : "");
-        if (state.modo === "ton") return '<td class="num" data-tip="' + esc(tip) + '">' + t(x) + "</td>";
-        return '<td class="num ' + cls(y) + '" data-tip="' + esc(tip) + '">' + (k === 0 ? t(x) : fp(y)) + "</td>";
-      }).join("");
-      var tt = tot(p);
-      return '<tr><td><button type="button" class="ag-link" data-prod="' + esc(p.n) + '">' + esc(p.n) + "</button></td><td>" + p.t + "</td>" + cells +
-        '<td class="num ' + cls(tt) + '"><strong>' + fp(tt) + "</strong></td></tr>";
-    }).join("") : '<tr><td colspan="' + (A.length + 3) + '" class="comex-empty">Nenhum produto para os filtros selecionados.</td></tr>';
-    el.resumo.textContent = l.length + " produtos · " + (state.modo === "ton" ? "quantidade produzida, em toneladas" : "variação percentual sobre o ano anterior (2016 em toneladas)");
-  }
-
   function select(n) {
     cur = P.filter(function (p) { return p.n === n; })[0] || P[0];
     el.sel.value = cur.n;
     renderKpis(); renderChart();
   }
   el.sel.addEventListener("change", function () { select(el.sel.value); });
-  el.tipo.addEventListener("change", renderTable);
-  el.busca.addEventListener("input", renderTable);
-  el.modo.addEventListener("change", function () { state.modo = el.modo.value; if (/^\d+$/.test(state.sortKey)) state.sortKey = "ult"; renderTable(); });
-  el.thead.addEventListener("click", function (ev) {
-    var b = ev.target.closest("button[data-sort]"); if (!b) return;
-    var k = b.getAttribute("data-sort");
-    if (state.sortKey === k) state.dir = -state.dir; else { state.sortKey = k; state.dir = (k === "n" || k === "t") ? 1 : -1; }
-    renderTable();
-  });
-  el.tbody.addEventListener("click", function (ev) {
-    var b = ev.target.closest("button[data-prod]"); if (!b) return;
-    select(b.getAttribute("data-prod"));
-    el.sel.scrollIntoView({ behavior: "smooth", block: "center" });
-  });
-  renderKpis(); renderChart(); renderTable();
+  renderKpis(); renderChart();
+
+  /* Panorama 2025: indicadores e ranking das culturas (página Agricultura) */
+  var rank = document.getElementById("ag-rank"), pan = document.getElementById("ag-panorama");
+  if (pan) {
+    var CIT = ["Laranja", "Limão", "Tangerina"];
+    var cit = function (k) { return D.produtos.filter(function (p) { return CIT.indexOf(p.n) >= 0; }).reduce(function (s, p) { return s + (p.v[k] || 0); }, 0); };
+    var top1 = P.slice().sort(function (a, b) { return b.v[N - 1] - a.v[N - 1]; })[0];
+    var alta = P.filter(function (p) { var x = tot(p); return x !== null && x > 0; }).length;
+    var items = [
+      ["Culturas com produção em " + A[N - 1], String(P.length)],
+      ["Maior cultura", top1.n + "<small>" + short(top1.v[N - 1]) + " t</small>"],
+      ["Citros (laranja, limão, tangerina)", short(cit(N - 1)) + " t<small>" + fp(pct(cit(N - 1), cit(0))) + " desde " + A[0] + "</small>"],
+      ["Culturas em alta desde " + A[0], alta + " de " + P.filter(function (p) { return tot(p) !== null; }).length]
+    ];
+    pan.innerHTML = items.map(function (x) { return '<div class="comex-kpi"><span>' + x[0] + "</span><strong>" + x[1] + "</strong></div>"; }).join("");
+  }
+  if (rank) {
+    var R = P.slice().sort(function (a, b) { return b.v[N - 1] - a.v[N - 1]; }), mx = R[0].v[N - 1];
+    rank.innerHTML = R.map(function (p, k) {
+      var v = p.v[N - 1], tt = tot(p);
+      var tip = p.n + "\nProdução em " + A[N - 1] + ": " + nf.format(v) + " t\nVariação desde " + A[0] + ": " + fp(tt);
+      return '<li data-tip="' + esc(tip) + '"><button type="button" class="ag-rank-btn" data-prod="' + esc(p.n) + '"><span class="comex-dest-row">' +
+        '<span class="comex-dest-rank">' + (k + 1) + '</span><span class="comex-dest-name">' + esc(p.n) + "</span>" +
+        '<span class="bar-track"><span class="bar-fill" data-tone="green" style="--value:' + Math.max(0.6, v / mx * 100) + '%"></span></span>' +
+        '<span class="comex-dest-val">' + short(v) + ' t <em class="' + cls(tt) + '">' + fp(tt) + "</em></span></span></button></li>";
+    }).join("");
+    rank.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button[data-prod]"); if (!b) return;
+      select(b.getAttribute("data-prod"));
+      document.getElementById("por-cultura").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 })();
