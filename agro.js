@@ -7,9 +7,9 @@
   var A = D.anos, N = A.length;
   /* Culturas sem produção em 2025 (série zerada ou encerrada) ficam fora */
   var P = D.produtos.filter(function (p) { return p.v[D.anos.length - 1] > 0; });
-  var $ = function (id) { return document.getElementById(id); };
+  var $ = function (id) { return document.getElementById(id) || document.createElement("select"); };
   var el = { sel: $("ag-prod"), kpis: $("ag-kpis"), chart: $("ag-chart"), title: $("ag-title"), tipo: $("ag-tipo"), busca: $("ag-busca"),
-    modo: $("ag-modo"), thead: $("ag-thead"), tbody: $("ag-tbody"), resumo: $("ag-resumo"), csv: $("ag-csv") };
+    modo: $("ag-modo"), thead: $("ag-thead"), tbody: $("ag-tbody"), resumo: $("ag-resumo") };
   var nf = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 });
   var nfd = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
@@ -138,21 +138,5 @@
     select(b.getAttribute("data-prod"));
     el.sel.scrollIntoView({ behavior: "smooth", block: "center" });
   });
-  el.csv.addEventListener("click", function () {
-    var q = function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; };
-    var lines = [["Produto", "Tipo"].concat(A.map(function (a) { return a + " (t)"; })).concat(A.slice(1).map(function (a) { return "Var. " + a + " (%)"; })).concat(["Var. " + A[0] + "–" + A[N - 1] + " (%)"]).map(q).join(";")];
-    list().forEach(function (p) {
-      var row = [q(p.n), q(p.t)].concat(p.v.map(function (x) { return x ? x : ""; }));
-      for (var k = 1; k < N; k++) { var y = yoy(p, k); row.push(y === null ? "" : y.toFixed(1).replace(".", ",")); }
-      var tt = tot(p); row.push(tt === null ? "" : tt.toFixed(1).replace(".", ","));
-      lines.push(row.join(";"));
-    });
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" }));
-    a.download = "mogi-mirim-producao-agricola-2016-2025.csv";
-    document.body.appendChild(a); a.click();
-    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
-  });
-
   renderKpis(); renderChart(); renderTable();
 })();

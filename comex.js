@@ -13,13 +13,19 @@
   var COLOR_EXP = "#129138";
   var COLOR_IMP = "#d9a000";
 
-  var $ = function (id) { return document.getElementById(id); };
+  var $ = function (id) {
+    var n = document.getElementById(id);
+    if (n) return n;
+    n = document.createElement(id === "cx-grupo" ? "select" : "div");
+    if (id === "cx-grupo") n.innerHTML = '<option value="setor">Setor</option>';
+    return n;
+  };
   var el = {
     fluxo: $("cx-fluxo"), setor: $("cx-setor"), de: $("cx-de"), ate: $("cx-ate"), sh2: $("cx-sh2"),
     pais: $("cx-pais"), busca: $("cx-busca"), grupo: $("cx-grupo"), limpar: $("cx-limpar"),
     kpis: $("cx-kpis"), dest: $("cx-dest"), destTitle: $("cx-dest-title"), destNote: $("cx-dest-note"), annual: $("cx-annual"), top: $("cx-top"), topTitle: $("cx-top-title"),
     thead: $("cx-thead"), tbody: $("cx-tbody"), resumo: $("cx-resumo"),
-    prev: $("cx-prev"), next: $("cx-next"), pagina: $("cx-pagina"), csv: $("cx-csv")
+    prev: $("cx-prev"), next: $("cx-next"), pagina: $("cx-pagina")
   };
 
   var nfInt = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 });
@@ -419,24 +425,6 @@
     if (state.sortKey === k) state.sortDir = -state.sortDir;
     else { state.sortKey = k; state.sortDir = (k === "e" || k === "i" || k === "s") ? -1 : 1; }
     render(true);
-  });
-
-  el.csv.addEventListener("click", function () {
-    if (!lastCtx) return;
-    var cols = columns(lastCtx);
-    var list = sorted(lastCtx);
-    var q = function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; };
-    var lines = [cols.map(function (x) { return q(x.label); }).join(";")];
-    list.forEach(function (g) {
-      lines.push(cols.map(function (x) { return x.num ? Math.round(g[x.key]) : q(g[x.key]); }).join(";"));
-    });
-    var blob = new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "mogi-mirim-comercio-exterior-" + lastCtx.f.de + "-" + lastCtx.f.ate + ".csv";
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
   });
 
   render(true);

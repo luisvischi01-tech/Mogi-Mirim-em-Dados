@@ -79,42 +79,10 @@
             <div id="ag-kpis" class="ag-kpis" aria-live="polite"></div>
           </div>
 
-          <div class="comex-filters ag-table-filters">
-            <label>Tipo de lavoura
-              <select id="ag-tipo">
-                <option value="">Todas</option>
-                <option value="Permanente">Permanente</option>
-                <option value="Temporária">Temporária</option>
-              </select>
-            </label>
-            <label>Exibir
-              <select id="ag-modo">
-                <option value="ton">Toneladas</option>
-                <option value="pct">Variação anual (%)</option>
-              </select>
-            </label>
-            <label class="comex-search">Busca
-              <input id="ag-busca" type="search" placeholder="Nome da cultura" autocomplete="off" />
-            </label>
-          </div>
-
-          <details class="table-box" data-collapse-mobile open>
-            <summary>Tabela completa por cultura</summary>
-          <div class="comex-table-head">
-            <p id="ag-resumo" class="comex-resumo" aria-live="polite"></p>
-            <button type="button" id="ag-csv" class="comex-btn comex-btn-primary">Baixar CSV</button>
-          </div>
-          <div class="comex-table-wrap">
-            <table class="comex-table ag-table">
-              <thead id="ag-thead"></thead>
-              <tbody id="ag-tbody"></tbody>
-            </table>
-          </div>
-          </details>
 
           <details class="note-more"><summary>Como ler estes dados</summary><p class="comex-note">
             Quantidade produzida em toneladas; "—" indica ausência de produção ou de dado. Culturas sem produção em 2025
-            não são exibidas. Verde: aumento; vermelho: redução. Clique no nome da cultura para ver o gráfico.
+            não são exibidas. Escolha a cultura no seletor para ver o gráfico e os indicadores.
           </p></details>
         </div>
 

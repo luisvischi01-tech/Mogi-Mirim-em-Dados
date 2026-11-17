@@ -82,15 +82,6 @@
             <label>País
               <select id="cx-pais"></select>
             </label>
-            <label>Agrupar por
-              <select id="cx-grupo">
-                <option value="setor">Setor</option>
-                <option value="sh4">Produto (SH4)</option>
-                <option value="sh2">Grupo de produtos (SH2)</option>
-                <option value="pais">País</option>
-                <option value="detalhe">Produto × país</option>
-              </select>
-            </label>
             <label class="comex-search">Busca
               <input id="cx-busca" type="search" placeholder="Código, produto ou país" autocomplete="off" />
             </label>
@@ -121,29 +112,11 @@
             <p id="cx-dest-note" class="comex-dest-note"></p>
           </div>
 
-          <details class="table-box" data-collapse-mobile open>
-            <summary>Tabela completa e download</summary>
-          <div class="comex-table-head">
-            <p id="cx-resumo" class="comex-resumo" aria-live="polite"></p>
-            <button type="button" id="cx-csv" class="comex-btn comex-btn-primary">Baixar CSV</button>
-          </div>
-          <div class="comex-table-wrap">
-            <table class="comex-table stack">
-              <thead id="cx-thead"></thead>
-              <tbody id="cx-tbody"></tbody>
-            </table>
-          </div>
-          <div class="comex-pager">
-            <button type="button" id="cx-prev" class="comex-btn">← Anterior</button>
-            <span id="cx-pagina"></span>
-            <button type="button" id="cx-next" class="comex-btn">Próxima →</button>
-          </div>
-          </details>
 
           <details class="note-more"><summary>Como ler estes dados</summary><p class="comex-note">
             Valores em dólares norte-americanos, preço FOB, sem correção monetária.
             * 2026 refere-se a período parcial, conforme a data de extração. SH2 e SH4:
-            capítulos e posições do Sistema Harmonizado. Nomes de produtos e setores foram simplificados para facilitar a leitura; a descrição oficial aparece ao passar o cursor sobre o nome e está disponível na base de origem. Clique no cabeçalho das colunas para ordenar.
+            capítulos e posições do Sistema Harmonizado. Nomes de produtos e setores foram simplificados para facilitar a leitura; a descrição oficial está disponível na base de origem.
           </p></details>
         </div>
 
